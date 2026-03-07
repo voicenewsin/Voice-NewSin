@@ -1,52 +1,49 @@
 <!DOCTYPE html>
+
 <html lang="si">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voice News In | සත්‍යයේ හඬ</title>
-    <style>
-        /* සරල මෝස්තර (CSS) */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
-        header { background: #cc0000; color: white; padding: 20px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        nav { background: #222; color: white; padding: 10px; text-align: center; sticky: top; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-        .main-content { max-width: 900px; margin: 20px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        .news-card { border-bottom: 2px solid #eee; padding: 20px 0; }
-        .news-card:last-child { border-bottom: none; }
-        h2 { color: #cc0000; }
-        footer { background: #222; color: white; text-align: center; padding: 15px; margin-top: 40px; }
-        .badge { background: #cc0000; color: white; padding: 5px 10px; border-radius: 5px; font-size: 12px; text-transform: uppercase; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice News In | පුවත් සේවාව</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f4f4f4; }
+header { background: #cc0000; color: white; padding: 20px; text-align: center; }
+nav { background: #222; padding: 10px; text-align: center; position: sticky; top: 0; }
+nav a { color: white; text-decoration: none; margin: 0 10px; font-weight: bold; font-size: 14px; }
+.container { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
+.box { background: white; width: 300px; margin: 10px; padding: 15px; border-top: 5px solid #cc0000; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+h2 { color: #cc0000; font-size: 18px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+.news { margin-bottom: 15px; border-bottom: 1px dashed #ccc; padding-bottom: 10px; }
+footer { background: #222; color: white; text-align: center; padding: 20px; margin-top: 20px; }
+</style>
 </head>
 <body>
 
 <header>
-    <h1>VOICE NEWS IN</h1>
-    <p>විශ්වසනීය පුවත් සේවාව - සත්‍යයේ හඬ</p>
+<h1>VOICE NEWS IN</h1>
+<p>සත්‍යයේ හඬ - පුවත් අංශ 6</p>
 </header>
 
 <nav>
-    <a href="#">මුල් පිටුව</a> | <a href="#">දේශපාලන</a> | <a href="#">තාක්ෂණික</a> | <a href="#">විදේශීය</a>
+<a href="#local">දේශීය</a>
+<a href="#foreign">විදේශීය</a>
+<a href="#sports">ක්‍රීඩා</a>
+<a href="#economy">ආර්ථික</a>
+<a href="#business">ව්‍යාපාරික</a>
+<a href="#arts">කලා</a>
 </nav>
 
-<div class="main-content">
-    <div class="news-card">
-        <span class="badge">Breaking News</span>
-        <h2>Voice News In නිල වශයෙන් අරඹයි!</h2>
-        <p>අද දින සිට ලොව වටා විසිරී සිටින ඔබ සැමට වඩාත් වේගවත් සහ නිවැරදි තොරතුරු අපගේ වෙබ් අඩවිය හරහා ලබා ගත හැකිය. අපගේ ගමනට ඔබත් එකතු වන්න.</p>
-        <small>පෙබරවාරි 15, 2026</small>
-    </div>
-
-    <div class="news-card">
-        <span class="badge">Technology</span>
-        <h2>ශ්‍රී ලංකාවේ ඩිජිටල් මාධ්‍ය කලාවේ නවමු වෙනසක්</h2>
-        <p>නූතන තාක්ෂණය භාවිතා කරමින් ජනතාව අතරට සත්‍ය තොරතුරු ගෙන යාමේ වැඩපිළිවෙලක් Voice News In විසින් හඳුන්වා දී ඇත.</p>
-        <small>පෙබරවාරි 14, 2026</small>
-    </div>
+<div class="container">
+<div class="box" id="local"><h2>📍 දේශීය</h2><div class="news"><b>අලුත් පුවත්</b><p>දේශීය තොරතුරු මෙතැනින්...</p></div></div>
+<div class="box" id="foreign"><h2>🌎 විදේශීය</h2><div class="news"><b>ලෝක පුවත්</b><p>විදේශීය තොරතුරු මෙතැනින්...</p></div></div>
+<div class="box" id="sports"><h2>🏆 ක්‍රීඩා</h2><div class="news"><b>ක්‍රීඩා පුවත්</b><p>ක්‍රීඩා තොරතුරු මෙතැනින්...</p></div></div>
+<div class="box" id="economy"><h2>📉 ආර්ථික</h2><div class="news"><b>ආර්ථික පුවත්</b><p>ආර්ථික තොරතුරු මෙතැනින්...</p></div></div>
+<div class="box" id="business"><h2>💼 ව්‍යාපාරික</h2><div class="news"><b>ව්‍යාපාරික පුවත්</b><p>ව්‍යාපාරික තොරතුරු මෙතැනින්...</p></div></div>
+<div class="box" id="arts"><h2>🎬 කලා</h2><div class="news"><b>කලා පුවත්</b><p>කලා තොරතුරු මෙතැනින්...</p></div></div>
 </div>
 
 <footer>
-    <p>&copy; 2026 Voice News In. All Rights Reserved. | Created for You</p>
+<p>&copy; 2026 Voice News In. All Rights Reserved.</p>
 </footer>
 
 </body>
