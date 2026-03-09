@@ -1,62 +1,129 @@
 <!DOCTYPE html>
-
-<!DOCTYPE html>
 <html lang="si">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voice News In - NewSin</title>
+    <title>VOICE NEWS IN - NewSin News</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #1a1a1a; color: white; text-align: center; margin: 0; padding: 0; }
-        header { background-color: #000; padding: 20px; border-bottom: 3px solid #ff0000; }
-        .logo { max-height: 100px; margin-bottom: 10px; }
-        .bio { font-size: 1.2rem; color: #cccccc; padding: 0 20px; max-width: 800px; margin: 20px auto; line-height: 1.6; }
-        .contact { color: #ff0000; font-weight: bold; margin-top: 20px; }
+        /* මූලික සැකසුම් - කළු පසුබිම ඉවත් කිරීම */
+        body {
+            font-family: 'Noto Sans Sinhala', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* පිරිසිදු ලා අළු පසුබිමක් */
+            color: #333; /* තද අළු අකුරු */
+        }
+
+        /* ඉහළ තීරුව (Header) */
+        header {
+            background-color: #ffffff; /* සුදු පසුබිම */
+            padding: 10px 20px;
+            border-bottom: 2px solid #cc0000; /* රතු ඉරක් */
+            text-align: center;
+        }
+
+        /* ලාංඡනය (Logo) සඳහා */
+        .logo-container img {
+            max-width: 150px; /* Logo එකේ ප්‍රමාණය */
+            height: auto;
+            display: block;
+            margin: 0 auto; /* මැදට ගැනීම */
+        }
+
+        /* මෙනුව (Navigation) */
+        nav {
+            background-color: #333; /* තද අළු පසුබිම */
+            overflow: hidden;
+            display: flex;
+            justify-content: center; /* මැදට ගැනීම */
+            flex-wrap: wrap; /* ජංගම දුරකථන සඳහා ගැළපීමට */
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        nav a:hover {
+            background-color: #cc0000; /* Mouse එක තැබූ විට රතු වීම */
+        }
+
+        /* ප්‍රධාන කොටස (Container) */
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff; /* පුවත් සඳහා සුදු පසුබිම */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* මඳ සෙවනැල්ලක් */
+        }
+
+        /* පුවත් කොටස (News Section) */
+        .news-section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            color: #cc0000;
+            border-bottom: 2px solid #cc0000;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        
+        /* පාදක කොටස (Footer) */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .audio-link {
+            background-color: #cc0000;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
 
 <header>
-    <img src="NewSin logo.png" alt="NewSin Logo" class="logo">
-    <h1>VOICE NEWS IN</h1>
-</header>
-
-<div class="bio">
-    විශ්වාසනීය පුවත් සම්ප්‍රදායක නවමු ඇරඹුම. ව්‍යාපාරික, ආර්ථික සහ දෙස් විදෙස් තොරතුරු සැණෙකින් සිංහලෙන් සහ ඉංග්‍රීසියෙන්. අසා දැනගන්න අපේ විශේෂ පුවත් විකාශය - NewSin.
-</div>
-
-<div class="contact">
-    Contact: info@voicenewsin.com
-</div>
-
-</body>
-</html>
-
-<header>
-<h><img src="logo.png" alt="NewSin Logo" style="height: 100px;width: auto;">"></h1>
-<p>සත්‍යයේ හඬ - ඔබ සොයන ඔබට අවැසි පුවත්</p>
+    <div class="logo-container">
+        <h1>VOICE NEWS IN</h1>
+        <img src="logo.png" alt="NewSin Logo" onerror="this.style.display='none'"> 
+    </div>
 </header>
 
 <nav>
-<a href="#local">දේශීය</a>
-<a href="#foreign">විදේශීය</a>
-<a href="#sports">ක්‍රීඩා</a>
-<a href="#economy">ආර්ථික</a>
-<a href="#business">ව්‍යාපාරික</a>
-<a href="#arts">කලා</a>
+    <a href="#">දේශීය</a>
+    <a href="#">විදේශීය</a>
+    <a href="#">ක්‍රීඩා</a>
+    <a href="#">ආර්ථික</a>
+    <a href="#">ව්‍යාපාරික</a>
+    <a href="#">කලා</a>
 </nav>
 
 <div class="container">
-<div class="box" id="local"><h2>📍 දේශීය</h2><div class="news"><b>අලුත් පුවත්</b><p>දේශීය තොරතුරු මෙතැනින්...</p></div></div>
-<div class="box" id="foreign"><h2>🌎 විදේශීය</h2><div class="news"><b>ලෝක පුවත්</b><p>විදේශීය තොරතුරු මෙතැනින්...</p></div></div>
-<div class="box" id="sports"><h2>🏆 ක්‍රීඩා</h2><div class="news"><b>ක්‍රීඩා පුවත්</b><p>ක්‍රීඩා තොරතුරු මෙතැනින්...</p></div></div>
-<div class="box" id="economy"><h2>📉 ආර්ථික</h2><div class="news"><b>ආර්ථික පුවත්</b><p>ආර්ථික තොරතුරු මෙතැනින්...</p></div></div>
-<div class="box" id="business"><h2>💼 ව්‍යාපාරික</h2><div class="news"><b>ව්‍යාපාරික පුවත්</b><p>ව්‍යාපාරික තොරතුරු මෙතැනින්...</p></div></div>
-<div class="box" id="arts"><h2>🎬 කලා</h2><div class="news"><b>කලා පුවත්</b><p>කලා තොරතුරු මෙතැනින්...</p></div></div>
+    <p>විශ්වාසනීය පුවත් සම්ප්‍රදායක නවමු ඇරඹුම. සත්‍යයේ හඬ - ඔබ සොයන ඔබට අවැසි පුවත්.</p>
+    <p>Contact: <a href="mailto:info@voicenewsin.com">info@voicenewsin.com</a></p>
+
+    <div class="news-section">
+        <h2 class="section-title">📍 දේශීය</h2>
+        <h3>අලුත් පුවත්</h3>
+        <p>දේශීය තොරතුරු මෙතැනින්...</p>
+    </div>
+    
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="ඔබේ-YOUTUBE-LINK-එක" class="audio-link" target="_blank">
+            🎧 අසා දැනගන්න අපේ විශේෂ පුවත් විකාශය
+        </a>
+    </div>
 </div>
 
 <footer>
-<p>&copy; 2026 Voice News In. All Rights Reserved.</p>
+    <p>&copy; 2026 NewSin. All Rights Reserved.</p>
 </footer>
 
 </body>
