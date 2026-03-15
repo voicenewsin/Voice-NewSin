@@ -15,32 +15,24 @@
             color: #333;
         }
 
-        /* Header එක එකම පේළියක කොටස් 3කට බෙදීම */
+        /* 1. Header එක ඇලවෙන ආකාරය */
         header {
             background-color: #ffffff;
-            padding: 10px 2%;
+            padding: 0 2%;
             border-bottom: 3px solid #cc0000;
             display: flex;
-            justify-content: space-between; /* වම, මැද, දකුණ සමබර කිරීමට */
+            justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1100;
+            height: 100px; /* Header එකේ උස ස්ථාවර කළා */
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* වම්පස: Logo */
-        .header-left {
-            flex: 1; /* සමාන ඉඩක් ලබා දීමට */
-            display: flex;
-            justify-content: flex-start;
-        }
-        .header-left img {
-            max-width: 250px;
-            height: auto;
-        }
+        .header-left { flex: 1; display: flex; justify-content: flex-start; }
+        .header-left img { max-width: 220px; height: auto; }
 
-        /* මැද: Audio සහ Social Links */
         .header-center {
             flex: 1;
             display: flex;
@@ -60,16 +52,11 @@
             font-size: 12px;
         }
 
-        /* දකුණ: විශේෂ පුවත / වෙළඳ දැන්වීම් ඉඩ */
-        .header-right {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-        }
+        .header-right { flex: 1; display: flex; justify-content: flex-end; }
         .special-ad-box {
-            width: 250px; /* ලාංඡනයේ ප්‍රමාණයට සමාන ඉඩක් */
-            height: 70px;
-            border: 1px dashed #ccc; /* දැනට ඉඩ පෙන්වීමට කුඩා බෝඩරයක් */
+            width: 250px;
+            height: 75px;
+            border: 1px dashed #ccc;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -77,54 +64,21 @@
             border-radius: 5px;
             background-color: #fffcfc;
         }
-        .special-ad-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* පින්තූරය කොටුවට ගැළපීමට */
-        }
-        /* 1. Header එක ඇලවෙන ආකාරය */
-header {
-    background-color: #ffffff;
-    padding: 10px 2%;
-    border-bottom: 3px solid #cc0000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky; /* තිරයේ ඇලී තිබීමට */
-    top: 0;           /* හරියටම ඉහළින්ම */
-    z-index: 1100;    /* සියල්ලටම වඩා උඩින් */
-    height: 90px;     /* Header එකට නියමිත උසක් ලබා දීම (මෙය වැදගත්) */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+        .special-ad-box img { width: 100%; height: 100%; object-fit: cover; }
 
-/* 2. මෙනු බාර් එක Header එකට පහළින් ඇලවෙන ආකාරය */
-nav {
-    background-color: #333;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: sticky;
-    top: 113px;       /* Header එකේ උස (90px) + Padding = 113px පමණ */
-    z-index: 1000;
-    width: 100%;
-}
-
-/* පුවත් කොටස් සඳහා ඉහළින් පරතරයක් ලබා දීම (Anchor links සඳහා) */
-.news-section { 
-    scroll-margin-top: 180px; /* මෙනුවට යට නොවී පුවත් පෙනීමට මෙය එක් කරන්න */
-    margin-bottom: 40px; 
-}
-        /* Sticky මෙනු බාර් එක */
+        /* 2. මෙනු බාර් එක Header එකට පහළින් ඇලවෙන ආකාරය */
         nav {
             background-color: #333;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             position: sticky;
-            top: 100px; /* Header එකේ උස අනුව මෙය වෙනස් විය හැක */
+            top: 103px; /* Header එකේ උසට (100px) වඩා මඳක් වැඩියෙන් */
             z-index: 1000;
+            width: 100%;
         }
-        nav a { color: white; padding: 15px 20px; text-decoration: none; font-size: 15px; }
+
+        nav a { color: white; padding: 15px 20px; text-decoration: none; font-size: 15px; transition: 0.3s; }
         nav a:hover { background-color: #cc0000; }
 
         /* ගලා යන පුවත් තීරුව */
@@ -140,15 +94,20 @@ nav {
             border-radius: 8px;
         }
 
-        .news-section { padding-top: 100px; margin-bottom: 40px; }
+        /* පුවත් කොටස් සඳහා ඉහළින් පරතරයක් ලබා දීම */
+        .news-section { 
+            padding-top: 20px;
+            scroll-margin-top: 170px; /* මෙනුවට යට නොවී පුවත් පෙනීමට */
+            margin-bottom: 40px; 
+        }
         .section-title { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 10px; margin-bottom: 20px; font-size: 24px; }
 
         footer { background-color: #333; color: white; padding: 30px; text-align: center; }
 
         @media (max-width: 850px) {
-            header { flex-direction: column; height: auto; }
+            header { flex-direction: column; height: auto; padding: 10px; }
             .header-right { margin-top: 10px; justify-content: center; }
-            nav { top: 0; position: relative; } /* Mobile වලදී Sticky ඉවත් කිරීම වඩාත් පහසුයි */
+            nav { position: relative; top: 0; }
         }
     </style>
 </head>
@@ -188,17 +147,4 @@ nav {
 
 <div class="container">
     <div id="local" class="news-section">
-        <h2 class="section-title">📍 දේශීය පුවත්</h2>
-        <p>දේශීය තොරතුරු මෙතැනින් පළ වේ...</p>
-    </div>
-    
-    <div id="foreign" class="news-section"> <h2 class="section-title">🌍 විදේශීය පුවත්</h2> </div>
-    <div id="sports" class="news-section"> <h2 class="section-title">🏆 ක්‍රීඩා පුවත්</h2> </div>
-</div>
-
-<footer>
-    <p>&copy; 2026 NewSin News. All Rights Reserved.</p>
-</footer>
-
-</body>
-</html>
+        <h2
