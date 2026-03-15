@@ -5,38 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VOICE NEWS IN - NewSin News</title>
     <style>
-        /* මූලික සැකසුම් - කළු පසුබිම ඉවත් කිරීම */
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Noto Sans Sinhala', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4; /* පිරිසිදු ලා අළු පසුබිමක් */
-            color: #333; /* තද අළු අකුරු */
+            background-color: #f4f4f4;
+            color: #333;
         }
-
-        /* ඉහළ තීරුව (Header) */
         header {
-            background-color: #ffffff; /* සුදු පසුබිම */
+            background-color: #ffffff;
             padding: 10px 20px;
-            border-bottom: 2px solid #cc0000; /* රතු ඉරක් */
+            border-bottom: 2px solid #cc0000;
             text-align: center;
         }
-
-        /* ලාංඡනය (Logo) සඳහා */
         .logo-container img {
-            max-width: 150px; /* Logo එකේ ප්‍රමාණය */
+            max-width: 150px;
             height: auto;
             display: block;
-            margin: 0 auto; /* මැදට ගැනීම */
+            margin: 0 auto;
         }
-
-        /* මෙනුව (Navigation) */
         nav {
-            background-color: #333; /* තද අළු පසුබිම */
+            background-color: #333;
             overflow: hidden;
             display: flex;
-            justify-content: center; /* මැදට ගැනීම */
-            flex-wrap: wrap; /* ජංගම දුරකථන සඳහා ගැළපීමට */
+            justify-content: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav a {
             color: white;
@@ -44,31 +41,21 @@
             text-decoration: none;
             font-size: 16px;
         }
-        nav a:hover {
-            background-color: #cc0000; /* Mouse එක තැබූ විට රතු වීම */
-        }
-
-        /* ප්‍රධාන කොටස (Container) */
+        nav a:hover { background-color: #cc0000; }
         .container {
             max-width: 1100px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #ffffff; /* පුවත් සඳහා සුදු පසුබිම */
-            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* මඳ සෙවනැල්ලක් */
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-
-        /* පුවත් කොටස (News Section) */
-        .news-section {
-            margin-bottom: 30px;
-        }
+        .news-section { padding-top: 60px; margin-bottom: 30px; }
         .section-title {
             color: #cc0000;
             border-bottom: 2px solid #cc0000;
             padding-bottom: 5px;
             margin-bottom: 15px;
         }
-        
-        /* පාදක කොටස (Footer) */
         footer {
             background-color: #333;
             color: white;
@@ -76,7 +63,6 @@
             text-align: center;
             font-size: 14px;
         }
-       
         .audio-link {
             background-color: #cc0000;
             color: white;
@@ -85,7 +71,6 @@
             border-radius: 5px;
             font-weight: bold;
         }
-
     </style>
 </head>
 <body>
@@ -100,51 +85,53 @@
 <nav>
     <a href="#local">දේශීය පුවත්</a>
     <a href="#foreign">විදේශීය</a>
-    <a href="#sports>ක්‍රීඩා</a>
+    <a href="#sports">ක්‍රීඩා</a>
     <a href="#economic">Economic</a>
     <a href="#business">ව්‍යාපාරික</a>
     <a href="#art">කලා</a>
     <a href="ඔබේ_යූටියුබ්_ලින්ක්_එක" target="_blank" style="color: yellow;">ප්‍රවෘත්ති අහන්න 🎧</a>
 </nav>
-         <div id="local" class="news-section">forign
-    <h2 class="section-title">📍 දේශීය පුවත්</h2>
-    <h3>අලුත් පුවත්</h3>
-    <p>දේශීය තොරතුරු මෙතැනින්...</p>
-</div>
 
-        <div    id="foreign" class="news-section">
+<div class="container">
+    <div id="local" class="news-section">
+        <h2 class="section-title">📍 දේශීය පුවත්</h2>
+        <h3>අලුත් පුවත්</h3>
+        <p>දේශීය තොරතුරු මෙතැනින්...</p>
+    </div>
+
+    <div id="foreign" class="news-section">
         <h2 class="section-title">🌍 විදේශීය පුවත්</h2>
-         <h3>අලුත් පුවත්</h3>
+        <h3>අලුත් පුවත්</h3>
         <p>විදේශීය තොරතුරු මෙතැනින්...</p>
-        </div>
+    </div>
 
     <div id="sports" class="news-section">
-    <h2 class="section-title">🏆 ක්‍රීඩා පුවත්</h2>
+        <h2 class="section-title">🏆 ක්‍රීඩා පුවත්</h2>
         <h3>අලුත් පුවත්</h3>
         <p>ක්‍රීඩා තොරතුරු මෙතැනින්...</p>
     </div>
-    
-    <div id= "economic" class="news-section">
-        <h2 class="section-title">📍Economic</h2>
+
+    <div id="economic" class="news-section">
+        <h2 class="section-title">📍 Economic</h2>
         <h3>අලුත් පුවත්</h3>
         <p>ආර්ථික තොරතුරු මෙතැනින්...</p>
     </div>
-    
-    <div id= "business, class="news-section">
+
+    <div id="business" class="news-section">
         <h2 class="section-title">📍 ව්‍යාපාරික</h2>
         <h3>අලුත් පුවත්</h3>
         <p>ව්‍යාපාරික තොරතුරු මෙතැනින්...</p>
     </div>
-    <div  id= "art", class="news-section">
+
+    <div id="art" class="news-section">
         <h2 class="section-title">📍 කලා</h2>
         <h3>අලුත් පුවත්</h3>
         <p>කලා තොරතුරු මෙතැනින්...</p>
     </div>
 
-    <div class="container">
+    <hr>
     <p>විශ්වාසනීය පුවත් සම්ප්‍රදායක නවමු ඇරඹුම. සත්‍යයේ හඬ - ඔබ සොයන ඔබට අවැසි පුවත්.</p>
     <p>Contact: <a href="mailto:info@voicenewsin.com">info@voicenewsin.com</a></p>
-        
     
     <div style="text-align: center; margin-top: 20px;">
         <a href="ඔබේ-YOUTUBE-LINK-එක" class="audio-link" target="_blank">
