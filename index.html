@@ -15,7 +15,7 @@
             color: #333;
         }
 
-        /* 1. Header එක ඇලවෙන ආකාරය */
+        /* 1. Sticky Header සැකසුම - උස 125px ලෙස ස්ථාවර කළා */
         header {
             background-color: #ffffff;
             padding: 0 2%;
@@ -25,20 +25,20 @@
             align-items: center;
             position: sticky;
             top: 0;
-            z-index: 1200; /* මෙනුවට වඩා උඩින් තිබිය යුතුයි */
-            height: 110px; /* උස ස්ථාවර කළා */
+            z-index: 1200;
+            height: 125px; 
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .header-left { flex: 1; display: flex; justify-content: flex-start; }
-        .header-left img { max-width: 220px; height: auto; }
+        .header-left img { max-width: 230px; height: auto; }
 
         .header-center {
             flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
         }
         .social-icons { display: flex; gap: 15px; }
         .social-icons a { text-decoration: none; font-size: 14px; font-weight: bold; color: #333; }
@@ -46,36 +46,39 @@
         .header-audio-btn {
             background-color: #cc0000;
             color: white !important;
-            padding: 6px 18px;
+            padding: 8px 20px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
             font-size: 13px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         .header-right { flex: 1; display: flex; justify-content: flex-end; }
         .special-ad-box {
-            width: 250px;
-            height: 80px;
+            width: 260px;
+            height: 85px;
             border: 1px dashed #ccc;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 5px;
             background-color: #fffcfc;
+            overflow: hidden;
         }
+        .special-ad-box img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* 2. මෙනු බාර් එක (කැපෙන්නේ නැතිව ඇලවීමට) */
+        /* 2. Sticky මෙනු බාර් එක - Header එක අවසන් වන 125px සිට ඇලවේ */
         nav {
             background-color: #333;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             position: sticky;
-            top: 110px; /* Header එකේ උසට සමාන විය යුතුයි */
+            top: 125px; 
             z-index: 1100;
             width: 100%;
-            height: 55px; /* මෙනු බාර් එකට ස්ථාවර උසක් */
+            height: 50px;
             align-items: center;
         }
 
@@ -84,39 +87,42 @@
             padding: 0 20px; 
             text-decoration: none; 
             font-size: 16px; 
-            line-height: 55px; /* අකුරු මැදට ගැනීමට */
-            transition: 0.3s;
+            line-height: 50px; 
+            transition: 0.3s; 
         }
         nav a:hover { background-color: #cc0000; }
 
-        /* Ticker */
+        /* ගලා යන පුවත් තීරුව */
         .ticker-wrap { background: #eee; padding: 10px; overflow: hidden; white-space: nowrap; }
         .ticker { display: inline-block; animation: ticker-anim 25s linear infinite; font-weight: bold; color: #cc0000; }
         @keyframes ticker-anim { 0% { transform: translate(100%, 0); } 100% { transform: translate(-100%, 0); } }
 
-        /* Container */
+        /* ප්‍රධාන පෙට්ටිය */
         .container {
-            max-width: 95%; 
+            max-width: 96%; 
             margin: 20px auto;
             padding: 25px;
             background-color: #ffffff;
             border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
         }
 
         /* පුවත් කොටස් මෙනුවට යට නොවී පෙනීමට */
         .news-section { 
             padding-top: 20px;
-            scroll-margin-top: 180px; 
+            scroll-margin-top: 200px; 
             margin-bottom: 50px;
         }
         .section-title { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 10px; margin-bottom: 20px; font-size: 26px; }
 
-        footer { background-color: #333; color: white; padding: 30px; text-align: center; }
+        footer { background-color: #333; color: white; padding: 30px; text-align: center; margin-top: 50px; }
 
+        /* ජංගම දුරකථන සඳහා සැකසුම */
         @media (max-width: 850px) {
-            header { flex-direction: column; height: auto; padding: 10px; }
+            header { height: auto; flex-direction: column; padding: 15px; }
             nav { position: relative; top: 0; height: auto; }
-            nav a { line-height: 40px; }
+            nav a { line-height: 45px; }
+            .header-right { margin-top: 10px; }
         }
     </style>
 </head>
@@ -129,14 +135,16 @@
 
     <div class="header-center">
         <div class="social-icons">
-            <a href="#">FB</a> <a href="#">YouTube</a> <a href="#">WhatsApp</a>
+            <a href="https://facebook.com" target="_blank">FB</a> 
+            <a href="https://youtube.com" target="_blank">YouTube</a> 
+            <a href="https://whatsapp.com" target="_blank">WhatsApp</a>
         </div>
         <a href="#" class="header-audio-btn">🎧 ප්‍රවෘත්ති අහන්න</a>
     </div>
 
     <div class="header-right">
         <div class="special-ad-box">
-             <img src="hot-news.jpg" alt="Magazine" onerror="this.src='https://via.placeholder.com/250x80?text=Top+C+Magazine'">
+            <img src="hot-news.jpg" alt="Special News" onerror="this.src='https://via.placeholder.com/260x85?text=Top+C+Magazine'">
         </div>
     </div>
 </header>
@@ -151,10 +159,11 @@
 </nav>
 
 <div class="ticker-wrap">
-    <p class="ticker">🔥 විශේෂ පුවත්: VOICE NEWS IN වෙතින් සත්‍යයේ හඬ පුවත් එසැණින් දැනගන්න... | NewSin Business News...</p>
+    <p class="ticker">🔥 විශේෂ පුවත්: VOICE NEWS IN වෙතින් සත්‍යයේ හඬ පුවත් එසැණින් දැනගන්න... | ව්‍යාපාරික සහ ආර්ථික විශ්ලේෂණ NewSin වෙතින්...</p>
 </div>
 
 <div class="container">
+    
     <div id="local" class="news-section">
         <h2 class="section-title">📍 දේශීය පුවත්</h2>
         <p>දේශීය තොරතුරු මෙතැනින් පළ වේ...</p>
@@ -164,6 +173,27 @@
         <h2 class="section-title">🌍 විදේශීය පුවත්</h2>
         <p>විදේශීය පුවත් විස්තරය මෙතැනින් ඇතුළත් කරන්න.</p>
     </div>
+    
+    <div id="sports" class="news-section">
+        <h2 class="section-title">🏆 ක්‍රීඩා පුවත්</h2>
+        <p>ක්‍රීඩා තොරතුරු මෙතැනින්...</p>
+    </div>
+
+    <div id="economic" class="news-section">
+        <h2 class="section-title">📉 Economic</h2>
+        <p>ආර්ථික තොරතුරු මෙතැනින්...</p>
+    </div>
+
+    <div id="business" class="news-section">
+        <h2 class="section-title">💼 ව්‍යාපාරික</h2>
+        <p>ව්‍යාපාරික පුවත් මෙතැනින්...</p>
+    </div>
+
+    <div id="art" class="news-section">
+        <h2 class="section-title">🎨 කලා</h2>
+        <p>කලා සහ සංස්කෘතික පුවත් මෙතැනින්...</p>
+    </div>
+
 </div>
 
 <footer>
