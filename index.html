@@ -6,7 +6,35 @@
     <title>VOICE NEWS IN - NewSin News</title>
     <style>
         html { scroll-behavior: smooth; }
-        
+        /* Header එක තිරයේ ඉහළ රඳවා ගැනීම */
+header {
+    background-color: #ffffff;
+    padding: 10px 5%;
+    border-bottom: 3px solid #cc0000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    /* ඇලවෙන සුලු බව ලබා දීම */
+    position: sticky;
+    top: 0;
+    z-index: 1100; /* අනෙක් සියල්ලටම වඩා උඩින් පෙන්වීමට */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* මෙනුව Header එකට පල්ලෙහායින් ඇලවීමට */
+nav {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    /* Header එකට පල්ලෙහායින් ඇලවීමට */
+    position: sticky;
+    top: 70px; /* Header එකේ උස අනුව මෙය වෙනස් විය හැක */
+    z-index: 1000;
+}
         body {
             font-family: 'Noto Sans Sinhala', Arial, sans-serif;
             margin: 0;
