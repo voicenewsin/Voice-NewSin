@@ -9,11 +9,10 @@
         
         body {
             font-family: 'Noto Sans Sinhala', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            /* නිල් මිශ්‍ර වෘත්තීය පසුබිම් වර්ණය */
-            background-color: #eef2f7; 
-            color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #eef2f7 !important; /* !important යෙදීමෙන් වර්ණය අනිවාර්යයෙන්ම වෙනස් වේ */
+    color: #333;
         }
 
         /* Sticky Header - 125px */
@@ -159,6 +158,23 @@
 </div>
 
 <div class="container">
+    <div style="background-color: #fff9f9; border: 2px solid #cc0000; border-radius: 10px; padding: 20px; margin-bottom: 30px; text-align: center;">
+    <h2 style="color: #cc0000; margin-top: 0;">🔥 අද දවසේ උණුසුම්ම පුවත තවමත් ඔබ දන්නේ නැද්ද?</h2>
+    
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px; justify-content: center;">
+        <img src="qr-news.jpg" alt="Fuel Pass QR" style="width: 100%; max-width: 400px; border-radius: 8px;" onerror="this.src='https://via.placeholder.com/400x250?text=Fuel+QR+News'">
+        
+        <div style="flex: 1; min-width: 300px; text-align: left;">
+            <h3 style="color: #1a365d;">දිවයින පුරා නැවතත් ඉන්ධන QR කේතය ක්‍රියාත්මක වෙයි!</h3>
+            <p>ඉන්ධන කළමනාකරණය විධිමත් කිරීම සඳහා රජය ගත් තීරණයකට අනුව අද සිට නැවතත් QR ක්‍රමය ක්‍රියාත්මක වේ. පෝලිම්වල රැඳී සිටීමකින් තොරව ඔබේ ඉන්ධන කෝටාව ලබා ගැනීමට මෙතැනින් ලියාපදිංචි වන්න.</p>
+            
+            <a href="https://fuelpass.gov.lk/" target="_blank" style="background-color: #cc0000; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 10px;">
+                මෙතැනින් ලියාපදිංචි වන්න ⛽
+            </a>
+            <p style="font-size: 12px; color: #666; margin-top: 10px;">මූලාශ්‍රය: ශ්‍රී ලංකා විදුලිබල හා බලශක්ති අමාත්‍යාංශය</p>
+        </div>
+    </div>
+</div>
     <div id="local" class="news-section">
         <h2 class="section-title">📍 දේශීය පුවත්</h2>
         <p>අද දින දේශීය පුවත් වාර්තාව මෙතැනින් පළ වේ...</p>
