@@ -15,18 +15,18 @@
             color: #333;
         }
 
-        /* Header සැකසුම */
+        /* 1. Header එක ඇලවෙන ආකාරය */
         header {
             background-color: #ffffff;
-            padding: 10px 2%;
+            padding: 0 2%;
             border-bottom: 3px solid #cc0000;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
-            z-index: 1100;
-            height: 100px;
+            z-index: 1200; /* මෙනුවට වඩා උඩින් තිබිය යුතුයි */
+            height: 110px; /* උස ස්ථාවර කළා */
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
@@ -40,23 +40,23 @@
             align-items: center;
             gap: 5px;
         }
-        .social-icons { display: flex; gap: 10px; }
-        .social-icons a { text-decoration: none; font-size: 13px; font-weight: bold; color: #333; }
+        .social-icons { display: flex; gap: 15px; }
+        .social-icons a { text-decoration: none; font-size: 14px; font-weight: bold; color: #333; }
         
         .header-audio-btn {
             background-color: #cc0000;
             color: white !important;
-            padding: 6px 15px;
+            padding: 6px 18px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 12px;
+            font-size: 13px;
         }
 
         .header-right { flex: 1; display: flex; justify-content: flex-end; }
         .special-ad-box {
             width: 250px;
-            height: 75px;
+            height: 80px;
             border: 1px dashed #ccc;
             display: flex;
             align-items: center;
@@ -65,19 +65,28 @@
             background-color: #fffcfc;
         }
 
-        /* Sticky මෙනු බාර් එක */
+        /* 2. මෙනු බාර් එක (කැපෙන්නේ නැතිව ඇලවීමට) */
         nav {
             background-color: #333;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             position: sticky;
-            top: 100px; /* Header එකේ උස අනුව */
-            z-index: 1000;
+            top: 110px; /* Header එකේ උසට සමාන විය යුතුයි */
+            z-index: 1100;
             width: 100%;
+            height: 55px; /* මෙනු බාර් එකට ස්ථාවර උසක් */
+            align-items: center;
         }
 
-        nav a { color: white; padding: 15px 20px; text-decoration: none; font-size: 15px; }
+        nav a { 
+            color: white; 
+            padding: 0 20px; 
+            text-decoration: none; 
+            font-size: 16px; 
+            line-height: 55px; /* අකුරු මැදට ගැනීමට */
+            transition: 0.3s;
+        }
         nav a:hover { background-color: #cc0000; }
 
         /* Ticker */
@@ -85,30 +94,29 @@
         .ticker { display: inline-block; animation: ticker-anim 25s linear infinite; font-weight: bold; color: #cc0000; }
         @keyframes ticker-anim { 0% { transform: translate(100%, 0); } 100% { transform: translate(-100%, 0); } }
 
-        /* පුවත් පෙට්ටිය */
+        /* Container */
         .container {
             max-width: 95%; 
             margin: 20px auto;
             padding: 25px;
             background-color: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
         }
 
-        /* පුවත් කොටස් මෙනුවට යට නොවී පෙන්වීමට */
+        /* පුවත් කොටස් මෙනුවට යට නොවී පෙනීමට */
         .news-section { 
             padding-top: 20px;
             scroll-margin-top: 180px; 
             margin-bottom: 50px;
-            border-bottom: 1px solid #eee;
         }
-        .section-title { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 10px; margin-bottom: 20px; font-size: 24px; }
+        .section-title { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 10px; margin-bottom: 20px; font-size: 26px; }
 
         footer { background-color: #333; color: white; padding: 30px; text-align: center; }
 
         @media (max-width: 850px) {
             header { flex-direction: column; height: auto; padding: 10px; }
-            nav { position: relative; top: 0; }
+            nav { position: relative; top: 0; height: auto; }
+            nav a { line-height: 40px; }
         }
     </style>
 </head>
@@ -123,12 +131,12 @@
         <div class="social-icons">
             <a href="#">FB</a> <a href="#">YouTube</a> <a href="#">WhatsApp</a>
         </div>
-        <a href="https://youtube.com/@YourChannel" class="header-audio-btn" target="_blank">🎧 ප්‍රවෘත්ති අහන්න</a>
+        <a href="#" class="header-audio-btn">🎧 ප්‍රවෘත්ති අහන්න</a>
     </div>
 
     <div class="header-right">
         <div class="special-ad-box">
-            <p style="font-size: 10px; color: #999;">ADVERTISEMENT / MAGAZINE</p>
+             <img src="hot-news.jpg" alt="Magazine" onerror="this.src='https://via.placeholder.com/250x80?text=Top+C+Magazine'">
         </div>
     </div>
 </header>
@@ -147,38 +155,15 @@
 </div>
 
 <div class="container">
-    
     <div id="local" class="news-section">
         <h2 class="section-title">📍 දේශීය පුවත්</h2>
-        <h3>අද දින විශේෂ පුවත</h3>
-        <p>දේශීය පුවත් විස්තරය මෙතැනින් ඇතුළත් කරන්න.</p>
+        <p>දේශීය තොරතුරු මෙතැනින් පළ වේ...</p>
     </div>
     
     <div id="foreign" class="news-section">
         <h2 class="section-title">🌍 විදේශීය පුවත්</h2>
         <p>විදේශීය පුවත් විස්තරය මෙතැනින් ඇතුළත් කරන්න.</p>
     </div>
-    
-    <div id="sports" class="news-section">
-        <h2 class="section-title">🏆 ක්‍රීඩා පුවත්</h2>
-        <p>ක්‍රීඩා පුවත් විස්තරය මෙතැනින් ඇතුළත් කරන්න.</p>
-    </div>
-
-    <div id="economic" class="news-section">
-        <h2 class="section-title">📉 Economic</h2>
-        <p>ආර්ථික සහ මූල්‍ය පුවත් මෙතැනින්...</p>
-    </div>
-
-    <div id="business" class="news-section">
-        <h2 class="section-title">💼 ව්‍යාපාරික</h2>
-        <p>ව්‍යාපාරික ලෝකයේ තොරතුරු මෙතැනින්...</p>
-    </div>
-
-    <div id="art" class="news-section">
-        <h2 class="section-title">🎨 කලා</h2>
-        <p>කලා සහ සංස්කෘතික පුවත් මෙතැනින්...</p>
-    </div>
-
 </div>
 
 <footer>
