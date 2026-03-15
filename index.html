@@ -15,7 +15,7 @@
             color: #333;
         }
 
-        /* 1. Header එක ඇලවෙන ආකාරය */
+        /* Header එක ඇලවෙන ආකාරය */
         header {
             background-color: #ffffff;
             padding: 0 2%;
@@ -26,7 +26,7 @@
             position: sticky;
             top: 0;
             z-index: 1100;
-            height: 100px; /* Header එකේ උස ස්ථාවර කළා */
+            height: 100px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
@@ -42,6 +42,7 @@
         }
         .social-icons { display: flex; gap: 10px; }
         .social-icons a { text-decoration: none; font-size: 13px; font-weight: bold; color: #333; }
+        
         .header-audio-btn {
             background-color: #cc0000;
             color: white !important;
@@ -54,7 +55,7 @@
 
         .header-right { flex: 1; display: flex; justify-content: flex-end; }
         .special-ad-box {
-            width: 350px;
+            width: 250px;
             height: 75px;
             border: 1px dashed #ccc;
             display: flex;
@@ -64,21 +65,20 @@
             border-radius: 5px;
             background-color: #fffcfc;
         }
-        .special-ad-box img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* 2. මෙනු බාර් එක Header එකට පහළින් ඇලවෙන ආකාරය */
+        /* මෙනු බාර් එක ඇලවෙන ආකාරය */
         nav {
             background-color: #333;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             position: sticky;
-            top: 103px; /* Header එකේ උසට (100px) වඩා මඳක් වැඩියෙන් */
+            top: 103px; 
             z-index: 1000;
             width: 100%;
         }
 
-        nav a { color: white; padding: 15px 20px; text-decoration: none; font-size: 15px; transition: 0.3s; }
+        nav a { color: white; padding: 15px 20px; text-decoration: none; font-size: 15px; }
         nav a:hover { background-color: #cc0000; }
 
         /* ගලා යන පුවත් තීරුව */
@@ -91,13 +91,12 @@
             margin: 20px auto;
             padding: 25px;
             background-color: #ffffff;
-            border-radius: 8px;
         }
 
-        /* පුවත් කොටස් සඳහා ඉහළින් පරතරයක් ලබා දීම */
+        /* ලින්ක් ක්ලික් කළ විට පුවත මෙනුවට යට නොවී පෙනීමට */
         .news-section { 
             padding-top: 20px;
-            scroll-margin-top: 170px; /* මෙනුවට යට නොවී පුවත් පෙනීමට */
+            scroll-margin-top: 180px; 
             margin-bottom: 40px; 
         }
         .section-title { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 10px; margin-bottom: 20px; font-size: 24px; }
@@ -106,7 +105,6 @@
 
         @media (max-width: 850px) {
             header { flex-direction: column; height: auto; padding: 10px; }
-            .header-right { margin-top: 10px; justify-content: center; }
             nav { position: relative; top: 0; }
         }
     </style>
@@ -120,14 +118,16 @@
 
     <div class="header-center">
         <div class="social-icons">
-            <a href="#">FB</a> <a href="#">YouTube</a> <a href="#">WhatsApp</a>
+            <a href="https://facebook.com" target="_blank">FB</a> 
+            <a href="https://youtube.com" target="_blank">YouTube</a> 
+            <a href="https://whatsapp.com" target="_blank">WhatsApp</a>
         </div>
-        <a href="#" class="header-audio-btn">🎧 ප්‍රවෘත්ති අහන්න</a>
+        <a href="ඔබේ-YOUTUBE-LINK-එක" class="header-audio-btn" target="_blank">🎧 ප්‍රවෘත්ති අහන්න</a>
     </div>
 
     <div class="header-right">
         <div class="special-ad-box">
-            <img src="hot-news.jpg" alt="Special News" onerror="this.src='https://via.placeholder.com/250x70?text=Special+News+Space'">
+            <img src="hot-news.jpg" alt="Special News" onerror="this.src='https://via.placeholder.com/250x70?text=Top+C+Magazine'">
         </div>
     </div>
 </header>
@@ -142,9 +142,44 @@
 </nav>
 
 <div class="ticker-wrap">
-    <p class="ticker">🔥 විශේෂ පුවත්: VOICE NEWS IN වෙතින් සත්‍යයේ හඬ පුවත් එසැණින් දැනගන්න... | ව්‍යාපාරික සහ ආර්ථික විශ්ලේෂණ NewSin වෙතින්...</p>
+    <p class="ticker">🔥 විශේෂ පුවත්: VOICE NEWS IN වෙතින් සත්‍යයේ හඬ පුවත් එසැණින් දැනගන්න... | NewSin ව්‍යාපාරික පුවත්...</p>
 </div>
 
 <div class="container">
     <div id="local" class="news-section">
-        <h2
+        <h2 class="section-title">📍 දේශීය පුවත්</h2>
+        <p>දේශීය තොරතුරු මෙතැනින් පළ වේ...</p>
+    </div>
+    
+    <div id="foreign" class="news-section">
+        <h2 class="section-title">🌍 විදේශීය පුවත්</h2>
+        <p>විදේශීය තොරතුරු මෙතැනින් පළ වේ...</p>
+    </div>
+    
+    <div id="sports" class="news-section">
+        <h2 class="section-title">🏆 ක්‍රීඩා පුවත්</h2>
+        <p>ක්‍රීඩා තොරතුරු මෙතැනින් පළ වේ...</p>
+    </div>
+
+    <div id="economic" class="news-section">
+        <h2 class="section-title">📉 Economic</h2>
+        <p>ආර්ථික පුවත් මෙතැනින්...</p>
+    </div>
+
+    <div id="business" class="news-section">
+        <h2 class="section-title">💼 ව්‍යාපාරික</h2>
+        <p>ව්‍යාපාරික පුවත් මෙතැනින්...</p>
+    </div>
+
+    <div id="art" class="news-section">
+        <h2 class="section-title">🎨 කලා</h2>
+        <p>කලා පුවත් මෙතැනින්...</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 NewSin News. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
