@@ -6,44 +6,16 @@
     <title>VOICE NEWS IN - NewSin News</title>
     <style>
         html { scroll-behavior: smooth; }
-        /* Header එක තිරයේ ඉහළ රඳවා ගැනීම */
-header {
-    background-color: #ffffff;
-    padding: 10px 5%;
-    border-bottom: 3px solid #cc0000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    
-    /* ඇලවෙන සුලු බව ලබා දීම */
-    position: sticky;
-    top: 0;
-    z-index: 1100; /* අනෙක් සියල්ලටම වඩා උඩින් පෙන්වීමට */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* මෙනුව Header එකට පල්ලෙහායින් ඇලවීමට */
-nav {
-    background-color: #333;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    
-    /* Header එකට පල්ලෙහායින් ඇලවීමට */
-    position: sticky;
-    top: 70px; /* Header එකේ උස අනුව මෙය වෙනස් විය හැක */
-    z-index: 1000;
-}
+        
         body {
             font-family: 'Noto Sans Sinhala', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f2f5; /* ඇසට සුවදායක ලා අළු පසුබිම */
+            background-color: #f0f2f5;
             color: #333;
         }
 
-        /* නවීන Header සැකසුම - ලාංඡනය වමට, අනෙක්වා දකුණට */
+        /* 1. Sticky Header සැකසුම */
         header {
             background-color: #ffffff;
             padding: 10px 5%;
@@ -52,10 +24,14 @@ nav {
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            position: sticky; /* තිරයේ ඇලී තිබීමට */
+            top: 0;
+            z-index: 1100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .header-left img {
-            max-width: 500px; /* ලාංඡනයේ ප්‍රමාණය */
+            max-width: 250px; /* Logo එක ඕනෑවට වඩා විශාල නොවන සේ */
             height: auto;
             display: block;
         }
@@ -77,10 +53,7 @@ nav {
             font-size: 14px;
             font-weight: bold;
             color: #333;
-            transition: 0.3s;
         }
-
-        .social-icons a:hover { color: #cc0000; }
 
         .header-audio-btn {
             background-color: #cc0000;
@@ -90,17 +63,16 @@ nav {
             text-decoration: none;
             font-weight: bold;
             font-size: 13px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        /* මෙනුව */
+        /* 2. Sticky මෙනුව (Header එකට යටින් ඇලවීමට) */
         nav {
             background-color: #333;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             position: sticky;
-            top: 0;
+            top: 75px; /* Header එකේ උස අනුව මෙය වෙනස් විය හැක */
             z-index: 1000;
         }
 
@@ -109,23 +81,39 @@ nav {
             padding: 15px 20px;
             text-decoration: none;
             font-size: 16px;
-            transition: 0.3s;
         }
 
         nav a:hover { background-color: #cc0000; }
 
-        /* ප්‍රධාන පෙට්ටිය - දෙපැත්ත පිරෙන සේ */
+        /* 3. News Ticker (ගලා යන පුවත්) */
+        .ticker-wrap {
+            background: #eee;
+            padding: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .ticker {
+            display: inline-block;
+            margin: 0;
+            padding-left: 100%;
+            animation: ticker-anim 25s linear infinite;
+            font-weight: bold;
+            color: #cc0000;
+        }
+        @keyframes ticker-anim {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+
         .container {
             max-width: 95%; 
             margin: 20px auto;
             padding: 25px;
             background-color: #ffffff;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
             border-radius: 8px;
         }
 
-        .news-section { padding-top: 50px; margin-bottom: 40px; }
-        
+        .news-section { padding-top: 80px; margin-bottom: 40px; }
         .section-title {
             color: #cc0000;
             border-bottom: 2px solid #cc0000;
@@ -139,14 +127,6 @@ nav {
             color: white;
             padding: 30px;
             text-align: center;
-            font-size: 15px;
-            margin-top: 50px;
-        }
-
-        /* ජංගම දුරකථන සඳහා සැකසුම් */
-        @media (max-width: 600px) {
-            header { flex-direction: column; text-align: center; }
-            .header-right { align-items: center; margin-top: 15px; }
         }
     </style>
 </head>
@@ -158,13 +138,9 @@ nav {
     </div>
     <div class="header-right">
         <div class="social-icons">
-            <a href="#">FB</a>
-            <a href="#">YouTube</a>
-            <a href="#">WhatsApp</a>
+            <a href="#">FB</a> <a href="#">YouTube</a> <a href="#">WhatsApp</a>
         </div>
-        <a href="ඔබේ-YouTube-Link" class="header-audio-btn" target="_blank">
-            🎧 ප්‍රවෘත්ති අහන්න
-        </a>
+        <a href="#" class="header-audio-btn">🎧 ප්‍රවෘත්ති අහන්න</a>
     </div>
 </header>
 
@@ -176,6 +152,10 @@ nav {
     <a href="#business">ව්‍යාපාරික</a>
     <a href="#art">කලා</a>
 </nav>
+
+<div class="ticker-wrap">
+    <p class="ticker">🔥 විශේෂ පුවත්: ව්‍යාපාරික ලෝකයේ අලුත්ම තොරතුරු සහ ආර්ථික විශ්ලේෂණ NewSin News වෙතින්... | සත්‍යයේ හඬ VOICE NEWS IN...</p>
+</div>
 
 <div class="container">
     <div id="local" class="news-section">
@@ -210,8 +190,7 @@ nav {
 
     <hr>
     <div style="text-align: center; padding: 20px;">
-        <p>සත්‍යයේ හඬ - ඔබ සොයන ඔබට අවැසි පුවත්.</p>
-        <p>සබඳතා: <a href="mailto:info@voicenewsin.com">info@voicenewsin.com</a></p>
+        <p>Contact: <a href="mailto:info@voicenewsin.com">info@voicenewsin.com</a></p>
     </div>
 </div>
 
